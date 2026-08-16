@@ -61,7 +61,7 @@ export const projects: Project[] = [
       "Strengthened understanding of state management and audio stream handling in React.",
     ],
     demoUrl: "https://example.com/demo/ai-interview-platform",
-    githubUrl: "https://github.com/meezan-afzal/ai-interview-platform",
+    githubUrl: "https://github.com/mohammed-meezan/ai-interview-platform",
     image: "/images/projects/ai-interview.svg",
     mockups: [
       {
@@ -135,7 +135,7 @@ export const projects: Project[] = [
       "Configured multi-container Docker environments for backend services and databases.",
     ],
     demoUrl: "https://example.com/demo/medilite",
-    githubUrl: "https://github.com/meezan-afzal/medilite-healthcare",
+    githubUrl: "https://github.com/mohammed-meezan/medilite-healthcare",
     image: "/images/projects/medilite.svg",
     mockups: [
       {
@@ -202,7 +202,7 @@ export const projects: Project[] = [
       "Sharpened responsive CSS styling and cross-device testing techniques.",
     ],
     demoUrl: "https://example.com/demo/e-plant-shopping",
-    githubUrl: "https://github.com/meezan-afzal/e-plantShopping",
+    githubUrl: "https://github.com/mohammed-meezan/e-plantShopping",
     image: "/images/projects/plant-shopping.svg",
     mockups: [
       {

@@ -9,8 +9,8 @@ export const siteConfig: SiteConfig = {
   location: "Mysore, Karnataka, India",
   status: "Open to Opportunities",
   email: "mohammedmeezanafzal@gmail.com",
-  github: "https://github.com/meezan-afzal",
-  linkedin: "https://linkedin.com/in/mohammed-meezan-afzal",
+  github: "https://github.com/mohammed-meezan",
+  linkedin: "https://www.linkedin.com/in/mohammed-meezan-afzal-b07900413/",
   resumePath: "/resume/Mohammed_Meezan_Afzal_Resume.pdf",
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://mohammedmeezan.vercel.app",
   education: {

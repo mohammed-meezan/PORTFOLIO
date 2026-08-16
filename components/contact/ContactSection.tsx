@@ -135,7 +135,7 @@ export const ContactSection: React.FC = () => {
             <div>
               <span className="text-xs font-mono text-zinc-500 uppercase">GitHub</span>
               <p className="text-sm font-semibold text-zinc-900 dark:text-white group-hover:text-brand-purple transition-colors">
-                github.com/meezan-afzal
+                github.com/mohammed-meezan
               </p>
             </div>
           </a>
