@@ -274,7 +274,7 @@ export default function ResumePage() {
                 Internship Completion Certificate – Ethnotech Academy
               </p>
               <a
-                href="/images/certificates/ethnotech-certificate.svg"
+                href="/images/certificates/ethnotech-certificate.jpg"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs text-blue-700 hover:underline font-sans inline-flex items-center gap-1"
