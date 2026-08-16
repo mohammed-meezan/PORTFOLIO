@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="medibg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#08090D"/>
+      <stop offset="50%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#0A2540"/>
+    </linearGradient>
+    <filter id="mediglow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#medibg)"/>
+  
+  <g stroke="rgba(255,255,255,0.04)" stroke-width="1">
+    <line x1="100" y1="0" x2="100" y2="450" />
+    <line x1="200" y1="0" x2="200" y2="450" />
+    <line x1="300" y1="0" x2="300" y2="450" />
+    <line x1="400" y1="0" x2="400" y2="450" />
+    <line x1="500" y1="0" x2="500" y2="450" />
+    <line x1="600" y1="0" x2="600" y2="450" />
+    <line x1="700" y1="0" x2="700" y2="450" />
+    <line x1="0" y1="100" x2="800" y2="100" />
+    <line x1="0" y1="200" x2="800" y2="200" />
+    <line x1="0" y1="300" x2="800" y2="300" />
+    <line x1="0" y1="400" x2="800" y2="400" />
+  </g>
+
+  <circle cx="150" cy="150" r="180" fill="#3B82F6" opacity="0.12" filter="url(#mediglow)"/>
+
+  <!-- Mockup Window -->
+  <rect x="60" y="50" width="680" height="350" rx="14" fill="#0D101A" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  
+  <!-- Titlebar -->
+  <rect x="60" y="50" width="680" height="42" rx="14" fill="#131726"/>
+  <rect x="60" y="80" width="680" height="12" fill="#131726"/>
+  <line x1="60" y1="92" x2="740" y2="92" stroke="rgba(255,255,255,0.08)"/>
+
+  <circle cx="85" cy="71" r="5.5" fill="#EF4444" opacity="0.8"/>
+  <circle cx="103" cy="71" r="5.5" fill="#F59E0B" opacity="0.8"/>
+  <circle cx="121" cy="71" r="5.5" fill="#10B981" opacity="0.8"/>
+
+  <text x="400" y="76" fill="#94A3B8" font-family="monospace" font-size="12" text-anchor="middle">medilite-healthcare.tsx • RBAC Vault</text>
+
+  <!-- Left: Medical Profile & QR -->
+  <rect x="90" y="120" width="280" height="240" rx="8" fill="#161B2E" stroke="rgba(59,130,246,0.3)" stroke-width="1"/>
+  <text x="110" y="150" fill="#60A5FA" font-family="monospace" font-size="14" font-weight="bold">MEDILITE EHR VAULT</text>
+  <text x="110" y="180" fill="#F8FAFC" font-family="sans-serif" font-size="12">Role: Doctor &amp; Clinical Staff</text>
+  <text x="110" y="205" fill="#94A3B8" font-family="sans-serif" font-size="12">Verified Access: Token RBAC</text>
+  <text x="110" y="230" fill="#34D399" font-family="sans-serif" font-size="12">Emergency QR: Dynamic (Active)</text>
+  <text x="110" y="255" fill="#94A3B8" font-family="sans-serif" font-size="12">Twilio SMS: Scheduled Daily 09:00</text>
+  <text x="110" y="300" fill="#06B6D4" font-family="monospace" font-size="11">[POSTGRESQL + PRISMA ORM]</text>
+  <text x="110" y="325" fill="#94A3B8" font-family="monospace" font-size="11">Cloudinary Diagnostic Scans: 100%</text>
+
+  <!-- Right: Prisma Schema & Code -->
+  <rect x="390" y="120" width="320" height="240" rx="8" fill="#161B2E" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="410" y="150" fill="#A78BFA" font-family="monospace" font-size="12">model MedicalRecord &#123;</text>
+  <text x="430" y="175" fill="#38BDF8" font-family="monospace" font-size="12">id          String   @id @default(uuid())</text>
+  <text x="430" y="200" fill="#38BDF8" font-family="monospace" font-size="12">patientId   String</text>
+  <text x="430" y="225" fill="#38BDF8" font-family="monospace" font-size="12">doctorId    String</text>
+  <text x="430" y="250" fill="#FCD34D" font-family="monospace" font-size="12">scanUrl     String?  // Cloudinary</text>
+  <text x="430" y="275" fill="#FCD34D" font-family="monospace" font-size="12">qrToken     String   @unique</text>
+  <text x="430" y="300" fill="#34D399" font-family="monospace" font-size="12">roleGuard   Role     @default(PATIENT)</text>
+  <text x="410" y="325" fill="#A78BFA" font-family="monospace" font-size="12">&#125;</text>
+</svg>

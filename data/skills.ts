@@ -1,0 +1,90 @@
+import { SkillCategory } from "@/types";
+
+export const skillCategories: SkillCategory[] = [
+  {
+    title: "Frontend Development",
+    description: "Building fast, dynamic, and responsive user interfaces with modern frameworks and CSS.",
+    icon: "Layout",
+    skills: [
+      "HTML5",
+      "CSS3",
+      "JavaScript (ES6+)",
+      "TypeScript",
+      "React.js",
+      "Next.js",
+      "Tailwind CSS",
+      "Redux Toolkit",
+    ],
+  },
+  {
+    title: "Backend Development",
+    description: "Architecting modular, secure REST APIs and server-side business logic.",
+    icon: "Server",
+    skills: [
+      "Node.js",
+      "Express.js",
+      "RESTful APIs",
+      "JWT Authentication",
+      "Role-Based Access Control",
+      "Middleware Architecture",
+    ],
+  },
+  {
+    title: "Databases & ORM",
+    description: "Designing efficient relational and document database schemas with data integrity.",
+    icon: "Database",
+    skills: [
+      "MongoDB",
+      "PostgreSQL",
+      "Prisma ORM",
+      "Mongoose",
+      "Database Schema Design",
+    ],
+  },
+  {
+    title: "Tools & Cloud Services",
+    description: "Streamlining deployment, media storage, containerization, and authentication.",
+    icon: "Wrench",
+    skills: [
+      "Git & GitHub",
+      "Docker",
+      "Cloudinary",
+      "Vercel",
+      "Clerk Auth",
+      "Postman",
+    ],
+  },
+  {
+    title: "AI Integration",
+    description: "Integrating intelligent models to augment user experiences and automate workflows.",
+    icon: "Sparkles",
+    skills: [
+      "OpenAI API",
+      "Gemini API",
+      "Prompt Engineering",
+      "AI Mock Interviews",
+      "Resume Analysis & ATS Parsing",
+    ],
+  },
+];
+
+export const allSkillsList = [
+  "React",
+  "Next.js",
+  "Node.js",
+  "TypeScript",
+  "JavaScript",
+  "Express.js",
+  "MongoDB",
+  "PostgreSQL",
+  "Prisma",
+  "Tailwind CSS",
+  "Docker",
+  "Clerk",
+  "Cloudinary",
+  "OpenAI API",
+  "Gemini API",
+  "Redux Toolkit",
+  "Git",
+  "REST APIs",
+];

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#08090D"/>
+      <stop offset="50%" stop-color="#0E121E"/>
+      <stop offset="100%" stop-color="#061A28"/>
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06B6D4"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bg)"/>
+  
+  <!-- Subtle Grid lines -->
+  <g stroke="rgba(255,255,255,0.04)" stroke-width="1">
+    <line x1="100" y1="0" x2="100" y2="450" />
+    <line x1="200" y1="0" x2="200" y2="450" />
+    <line x1="300" y1="0" x2="300" y2="450" />
+    <line x1="400" y1="0" x2="400" y2="450" />
+    <line x1="500" y1="0" x2="500" y2="450" />
+    <line x1="600" y1="0" x2="600" y2="450" />
+    <line x1="700" y1="0" x2="700" y2="450" />
+    <line x1="0" y1="100" x2="800" y2="100" />
+    <line x1="0" y1="200" x2="800" y2="200" />
+    <line x1="0" y1="300" x2="800" y2="300" />
+    <line x1="0" y1="400" x2="800" y2="400" />
+  </g>
+
+  <!-- Ambient Glow -->
+  <circle cx="650" cy="150" r="180" fill="#06B6D4" opacity="0.12" filter="url(#glow)"/>
+
+  <!-- Code Window Mockup -->
+  <rect x="60" y="50" width="680" height="350" rx="14" fill="#0D101A" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  
+  <!-- Titlebar -->
+  <rect x="60" y="50" width="680" height="42" rx="14" fill="#131726"/>
+  <rect x="60" y="80" width="680" height="12" fill="#131726"/>
+  <line x1="60" y1="92" x2="740" y2="92" stroke="rgba(255,255,255,0.08)"/>
+
+  <circle cx="85" cy="71" r="5.5" fill="#EF4444" opacity="0.8"/>
+  <circle cx="103" cy="71" r="5.5" fill="#F59E0B" opacity="0.8"/>
+  <circle cx="121" cy="71" r="5.5" fill="#10B981" opacity="0.8"/>
+
+  <text x="400" y="76" fill="#94A3B8" font-family="monospace" font-size="12" text-anchor="middle">ai-interview-platform.ts • Full-Stack</text>
+
+  <!-- Content Elements -->
+  <!-- Left Side: Radar / Stats -->
+  <rect x="90" y="120" width="280" height="110" rx="8" fill="#161B2E" stroke="rgba(6,182,212,0.3)" stroke-width="1"/>
+  <text x="110" y="150" fill="#06B6D4" font-family="monospace" font-size="14" font-weight="bold">AI MOCK EVALUATION</text>
+  <text x="110" y="175" fill="#F8FAFC" font-family="sans-serif" font-size="12">Semantic Accuracy: 94%</text>
+  <text x="110" y="195" fill="#94A3B8" font-family="sans-serif" font-size="12">Pacing &amp; Voice Tone: Optimal</text>
+  <text x="110" y="215" fill="#10B981" font-family="sans-serif" font-size="12">ATS Resume Match: 88/100</text>
+
+  <!-- Right Side: Code snippets -->
+  <rect x="390" y="120" width="320" height="240" rx="8" fill="#161B2E" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="410" y="150" fill="#A78BFA" font-family="monospace" font-size="12">async function evaluateInterview() {</text>
+  <text x="430" y="175" fill="#38BDF8" font-family="monospace" font-size="12">const prompt = createATSContext();</text>
+  <text x="430" y="200" fill="#38BDF8" font-family="monospace" font-size="12">const feedback = await ai.generate({</text>
+  <text x="450" y="225" fill="#FCD34D" font-family="monospace" font-size="12">model: "gemini-1.5-pro",</text>
+  <text x="450" y="250" fill="#FCD34D" font-family="monospace" font-size="12">audioStream: session.audio</text>
+  <text x="430" y="275" fill="#38BDF8" font-family="monospace" font-size="12">});</text>
+  <text x="430" y="300" fill="#34D399" font-family="monospace" font-size="12">return socket.emit("results", feedback);</text>
+  <text x="410" y="325" fill="#A78BFA" font-family="monospace" font-size="12">}</text>
+
+  <!-- Bottom Badges -->
+  <rect x="90" y="250" width="280" height="110" rx="8" fill="#161B2E" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="110" y="280" fill="#F8FAFC" font-family="sans-serif" font-size="13" font-weight="bold">Core Architecture</text>
+  <text x="110" y="305" fill="#94A3B8" font-family="monospace" font-size="11">• React + TypeScript + Node.js</text>
+  <text x="110" y="325" fill="#94A3B8" font-family="monospace" font-size="11">• MongoDB + JWT + Socket.io</text>
+  <text x="110" y="345" fill="#94A3B8" font-family="monospace" font-size="11">• OpenAI &amp; Gemini AI APIs</text>
+</svg>
