@@ -3,133 +3,112 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { siteConfig } from "@/data/siteConfig";
-import { Button } from "../ui/Button";
-import { MobileMenu } from "./MobileMenu";
-import { Menu, FileText, Download } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { ThemeToggle } from "../theme/ThemeToggle";
+import { Menu, X, MessageSquare } from "lucide-react";
 
 const navItems = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
-  { label: "Journey", href: "#journey" },
-  { label: "Certifications", href: "#certifications" },
-  { label: "Contact", href: "#contact" },
+  { label: "Experience", href: "#experience" },
+  { label: "Certificates", href: "#certificates" },
 ];
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-
-      // Determine active section
-      const sections = navItems.map((item) => item.href.substring(1));
-      const scrollPosition = window.scrollY + 200;
-
-      for (const section of sections) {
-        const el = document.getElementById(section);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
+      setScrolled(window.scrollY > 20);
     };
-
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <>
-      <header
-        className={cn(
-          "fixed top-0 left-0 right-0 z-40 transition-all duration-300",
-          scrolled
-            ? "glass-nav py-3.5 shadow-lg shadow-black/20"
-            : "bg-transparent py-5"
-        )}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Logo */}
-          <Link
-            href="/"
-            className="group flex items-center gap-2.5 text-white font-bold tracking-tight text-lg sm:text-xl transition-all focus:outline-none"
-            aria-label="Mohammed Meezan Afzal - Home"
-          >
-            <span className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white text-sm font-black shadow-glow-cyan group-hover:scale-105 transition-transform">
+    <header
+      className={`sticky top-0 z-40 w-full transition-all duration-200 ${
+        scrolled
+          ? "bg-background/85 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800 shadow-sm"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5 lg:px-0">
+        {/* Brand Logo */}
+        <Link
+          href="/"
+          className="flex items-center gap-2.5 text-zinc-900 dark:text-white font-bold text-lg tracking-tight hover:opacity-90 transition-opacity"
+        >
+          <span className="w-8 h-8 rounded-lg bg-gradient-to-r from-brand-pink to-brand-purple p-0.5 inline-block">
+            <span className="w-full h-full rounded-[6px] bg-background flex items-center justify-center text-xs font-bold text-zinc-900 dark:text-white">
               {siteConfig.initials}
             </span>
-            <span className="hidden sm:inline-block font-semibold tracking-wide group-hover:text-cyan-400 transition-colors">
-              {siteConfig.name}
-            </span>
-          </Link>
+          </span>
+          <span className="font-semibold">{siteConfig.name}</span>
+        </Link>
 
-          {/* Desktop Nav Items */}
-          <nav className="hidden md:flex items-center gap-1 bg-surface-100/60 p-1.5 rounded-full border border-white/10 backdrop-blur-md">
-            {navItems.map((item) => {
-              const isActive = activeSection === item.href.substring(1);
-              return (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className={cn(
-                    "px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-200",
-                    isActive
-                      ? "bg-cyan-500/15 text-cyan-400 border border-cyan-500/30 shadow-sm"
-                      : "text-slate-300 hover:text-white hover:bg-white/5 border border-transparent"
-                  )}
-                >
-                  {item.label}
-                </a>
-              );
-            })}
+        {/* Desktop Nav Items + Actions */}
+        <div className="flex items-center gap-4">
+          <nav className="hidden md:flex items-center gap-1 text-sm font-medium text-zinc-600 dark:text-zinc-300">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="rounded-lg px-3.5 py-1.5 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-950 dark:hover:text-white transition-colors"
+              >
+                {item.label}
+              </a>
+            ))}
           </nav>
 
-          {/* Action CTAs */}
-          <div className="flex items-center gap-3">
-            <Button
-              href="/resume"
-              variant="outline"
-              size="sm"
-              icon={Download}
-              className="hidden sm:inline-flex border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-400"
-            >
-              Resume
-            </Button>
+          {/* Theme Toggle Button */}
+          <ThemeToggle />
 
-            {/* Mobile Hamburger Button */}
-            <button
-              onClick={() => setMobileMenuOpen(true)}
-              className="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 md:hidden transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400"
-              aria-label="Open mobile menu"
-            >
-              <Menu className="w-6 h-6" />
-            </button>
-          </div>
+          {/* Contact Button */}
+          <a
+            href="#contact"
+            className="group cursor-pointer rounded-lg bg-gradient-to-r from-brand-pink to-brand-purple p-0.5 hover:scale-[1.02] transition-transform"
+          >
+            <div className="flex items-center gap-2 rounded-md bg-background px-4 py-1.5 text-sm font-medium text-zinc-900 dark:text-white group-hover:bg-gradient-to-r group-hover:from-brand-pink group-hover:to-brand-purple group-hover:text-white transition-all">
+              <MessageSquare className="w-4 h-4" />
+              <span className="hidden sm:inline">Contact</span>
+            </div>
+          </a>
+
+          {/* Mobile Hamburger Menu */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="p-2 rounded-lg text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 md:hidden"
+            aria-label="Toggle mobile navigation menu"
+          >
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
         </div>
-      </header>
+      </div>
 
       {/* Mobile Drawer */}
-      <MobileMenu
-        isOpen={mobileMenuOpen}
-        onClose={() => setMobileMenuOpen(false)}
-        navItems={navItems}
-        activeSection={activeSection}
-      />
-    </>
+      {mobileMenuOpen && (
+        <div className="md:hidden border-b border-zinc-200 dark:border-zinc-800 bg-background px-6 py-4 space-y-2">
+          {navItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              onClick={() => setMobileMenuOpen(false)}
+              className="block rounded-lg px-3 py-2 text-base font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-950 dark:hover:text-white"
+            >
+              {item.label}
+            </a>
+          ))}
+          <a
+            href="/resume"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block rounded-lg px-3 py-2 text-base font-medium text-brand-purple hover:bg-zinc-100 dark:hover:bg-zinc-800"
+          >
+            Resume (View / Download)
+          </a>
+        </div>
+      )}
+    </header>
   );
 };

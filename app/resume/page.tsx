@@ -11,12 +11,12 @@ export const metadata: Metadata = {
 
 export default function ResumePage() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 py-10 px-4 sm:px-6">
+    <div className="min-h-screen bg-background text-foreground py-10 px-4 sm:px-6 transition-colors">
       {/* Top Action Bar */}
       <div className="max-w-4xl mx-auto mb-8 flex flex-wrap items-center justify-between gap-4 print:hidden">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-xs font-mono text-cyan-400 hover:text-cyan-300 transition-colors p-2.5 rounded-lg bg-surface-100/80 border border-white/10"
+          className="inline-flex items-center gap-2 text-xs font-semibold text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white transition-colors p-2.5 rounded-lg bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Back to Portfolio</span>
@@ -26,10 +26,10 @@ export default function ResumePage() {
           <a
             href="/resume/Mohammed_Meezan_Afzal_Resume.pdf"
             download="Mohammed_Meezan_Afzal_Resume.pdf"
-            className="inline-flex items-center gap-2 text-xs font-semibold px-4 py-2.5 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-lg shadow-cyan-500/20 transition-all cursor-pointer"
+            className="inline-flex items-center gap-2 text-xs font-semibold px-4 py-2.5 rounded-lg bg-gradient-to-r from-brand-pink to-brand-purple hover:opacity-95 text-white shadow-lg transition-all cursor-pointer hover:scale-[1.02]"
           >
             <Download className="w-4 h-4" />
-            <span>Download PDF</span>
+            <span>Download Official PDF</span>
           </a>
         </div>
       </div>

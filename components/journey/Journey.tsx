@@ -2,107 +2,87 @@
 
 import React from "react";
 import { journeyTimeline } from "@/data/experience";
-import { SectionHeading } from "../ui/SectionHeading";
-import { Card } from "../ui/Card";
-import { Badge } from "../ui/Badge";
-import {
-  GraduationCap,
-  Code2,
-  Award,
-  Calendar,
-  MapPin,
-  Sparkles,
-} from "lucide-react";
+import { Briefcase, GraduationCap, Calendar, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
-
-const typeIconMap = {
-  education: GraduationCap,
-  milestone: Code2,
-  certification: Award,
-};
-
-const typeColorMap = {
-  education: "text-cyan-400 border-cyan-500/30 bg-cyan-500/10",
-  milestone: "text-blue-400 border-blue-500/30 bg-blue-500/10",
-  certification: "text-emerald-400 border-emerald-500/30 bg-emerald-500/10",
-};
 
 export const Journey: React.FC = () => {
   return (
-    <section id="journey" className="py-20 md:py-28 relative bg-surface-300/40">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          badgeText="Education & Milestones"
-          title="My Developer Journey"
-          subtitle="A transparent, milestone-based timeline highlighting academic foundation, continuous full-stack skill building, and practical application engineering."
-        />
+    <section id="experience" className="mx-auto mt-24 max-w-5xl px-6 md:mt-32 lg:px-0">
+      {/* Title */}
+      <div>
+        <span className="text-xs font-mono uppercase tracking-widest text-brand-purple">
+          Career &amp; Learning
+        </span>
+        <h3 className="mt-2 text-3xl font-semibold tracking-tight text-zinc-900 dark:text-white md:text-4xl">
+          My Experience
+        </h3>
+      </div>
 
-        <div className="relative pl-6 sm:pl-8 border-l border-white/10 space-y-12 ml-2 sm:ml-6">
-          {journeyTimeline.map((item, index) => {
-            const Icon = typeIconMap[item.type] || Sparkles;
-            const colorClass = typeColorMap[item.type] || "text-cyan-400 border-cyan-500/30 bg-cyan-500/10";
-
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.15 }}
-                className="relative group"
-              >
-                {/* Timeline node icon */}
-                <div
-                  className={`absolute -left-[35px] sm:-left-[43px] top-1.5 w-8 h-8 rounded-xl border flex items-center justify-center backdrop-blur-md shadow-md transition-transform group-hover:scale-110 ${colorClass}`}
-                >
-                  <Icon className="w-4 h-4" />
-                </div>
-
-                {/* Timeline content card */}
-                <Card className="p-6 bg-surface-100/70 border-white/[0.08] hover:border-cyan-500/30">
-                  <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                    <div className="flex items-center gap-2 text-xs font-mono text-cyan-400">
-                      <Calendar className="w-3.5 h-3.5" />
-                      <span>{item.period}</span>
-                    </div>
-
-                    <div className="flex items-center gap-1.5 text-xs text-slate-400">
-                      <MapPin className="w-3 h-3 text-slate-400" />
-                      <span>{item.location}</span>
-                    </div>
-                  </div>
-
-                  <h3 className="text-lg sm:text-xl font-bold text-white mb-1">
-                    {item.title}
-                  </h3>
-
-                  <p className="text-sm font-medium text-slate-300 mb-3">
-                    {item.institution}
-                  </p>
-
-                  <p className="text-xs sm:text-sm text-slate-400 leading-relaxed mb-4">
-                    {item.description}
-                  </p>
-
-                  {item.skills && (
-                    <div className="flex flex-wrap gap-1.5 pt-3 border-t border-white/5">
-                      {item.skills.map((skill) => (
-                        <Badge
-                          key={skill}
-                          variant="subtle"
-                          size="sm"
-                          className="text-[11px] bg-surface-200/80"
-                        >
-                          {skill}
-                        </Badge>
-                      ))}
-                    </div>
-                  )}
-                </Card>
-              </motion.div>
-            );
-          })}
+      {/* Philosophy Row */}
+      <div className="mt-8 grid grid-cols-1 gap-6 md:mt-12 md:grid-cols-[1fr_2fr]">
+        <div className="text-xl text-zinc-900 dark:text-white">
+          <div className="font-semibold">Hands-on industry exposure</div>
+          <div className="font-serif font-normal italic text-zinc-600 dark:text-zinc-400">
+            Internship, Academics &amp; Milestones
+          </div>
         </div>
+
+        <div className="text-zinc-600 dark:text-zinc-300 leading-relaxed text-base">
+          A milestone-driven track record of formal computer application studies, team-based internship development at Ethnotech Academy, and persistent full-stack engineering work.
+        </div>
+      </div>
+
+      {/* Experience Cards */}
+      <div className="mt-12 space-y-6">
+        {journeyTimeline.map((item, idx) => (
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: idx * 0.1 }}
+            className="group rounded-2xl bg-gradient-to-r from-brand-pink to-brand-purple p-0.5 hover:scale-[1.01] transition-transform duration-200"
+          >
+            <div className="rounded-[14px] bg-background p-6 sm:p-8">
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <span className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-brand-purple">
+                  <Calendar className="w-3.5 h-3.5" />
+                  {item.period}
+                </span>
+
+                <span className="inline-flex items-center gap-1.5 text-xs text-zinc-500">
+                  <MapPin className="w-3.5 h-3.5" />
+                  {item.location}
+                </span>
+              </div>
+
+              <h4 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white mb-1">
+                {item.title}
+              </h4>
+
+              <p className="text-sm font-semibold text-brand-pink mb-4">
+                {item.institution}
+              </p>
+
+              <p className="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed mb-4">
+                {item.description}
+              </p>
+
+              {item.skills && (
+                <div className="flex flex-wrap gap-1.5 pt-3 border-t border-zinc-100 dark:border-zinc-800/80">
+                  {item.skills.map((s) => (
+                    <span
+                      key={s}
+                      className="text-xs px-2.5 py-0.5 rounded-md bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-800 font-medium"
+                    >
+                      {s}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );

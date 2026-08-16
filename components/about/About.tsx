@@ -2,181 +2,92 @@
 
 import React from "react";
 import { siteConfig } from "@/data/siteConfig";
-import { SectionHeading } from "../ui/SectionHeading";
-import { Card } from "../ui/Card";
-import {
-  GraduationCap,
-  Layers,
-  Sparkles,
-  MapPin,
-  CheckCircle,
-  Database,
-  Lock,
-  Server,
-  Cloud,
-  Layout,
-} from "lucide-react";
+import { Github, Linkedin, Mail, FileText, UserCheck } from "lucide-react";
 import { motion } from "framer-motion";
 
 export const About: React.FC = () => {
-  const highlights = [
-    {
-      icon: GraduationCap,
-      title: "Education",
-      subtitle: siteConfig.education.degree,
-      detail: `${siteConfig.education.college} (Graduating ${siteConfig.education.graduationYear})`,
-      color: "text-cyan-400",
-    },
-    {
-      icon: Layers,
-      title: "Core Focus",
-      subtitle: "Full-Stack Web Development",
-      detail: "React, Node.js, Express, PostgreSQL & MongoDB",
-      color: "text-blue-400",
-    },
-    {
-      icon: Sparkles,
-      title: "Interests",
-      subtitle: "Web Apps • AI Integrations",
-      detail: "Building production-grade tools with modern LLM APIs",
-      color: "text-emerald-400",
-    },
-    {
-      icon: MapPin,
-      title: "Location",
-      subtitle: siteConfig.location,
-      detail: "Open to Remote & On-site Roles across India",
-      color: "text-purple-400",
-    },
-  ];
-
-  const practicalAreas = [
-    {
-      icon: Lock,
-      title: "Authentication & Security",
-      desc: "JWT, bcrypt, Clerk Auth, role-based access control (RBAC)",
-    },
-    {
-      icon: Server,
-      title: "REST APIs & Backend",
-      desc: "Modular Express routers, middleware chains, async handlers",
-    },
-    {
-      icon: Database,
-      title: "Database Architectures",
-      desc: "PostgreSQL with Prisma ORM and MongoDB with Mongoose",
-    },
-    {
-      icon: Cloud,
-      title: "Cloud & Media Storage",
-      desc: "Cloudinary media pipelines and Dockerized deployment",
-    },
-    {
-      icon: Layout,
-      title: "Responsive Dashboards",
-      desc: "Component-driven React UI with Tailwind CSS and state systems",
-    },
-    {
-      icon: Sparkles,
-      title: "AI API Integrations",
-      desc: "Connecting OpenAI and Gemini APIs for real-time evaluations",
-    },
-  ];
-
   return (
-    <section id="about" className="py-20 md:py-28 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          badgeText="About Me"
-          title="Bridging Theoretical Foundations with Real-World Full-Stack Engineering"
-          subtitle="A dedicated developer combining computer applications coursework with hands-on project architectures."
-        />
+    <section id="about" className="mx-auto mt-24 max-w-5xl px-6 md:mt-32 lg:px-0">
+      <div>
+        <span className="text-xs font-mono uppercase tracking-widest text-brand-purple">
+          About Me
+        </span>
+        <h3 className="mt-2 text-3xl font-semibold tracking-tight text-zinc-900 dark:text-white md:text-4xl">
+          {siteConfig.name}
+        </h3>
+      </div>
 
-        {/* 4 Info Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
-          {highlights.map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-              >
-                <Card className="h-full flex flex-col justify-between border-white/[0.07] bg-surface-100/60 p-5">
-                  <div>
-                    <div className="w-10 h-10 rounded-xl bg-surface-50 border border-white/10 flex items-center justify-center mb-4">
-                      <Icon className={`w-5 h-5 ${item.color}`} />
-                    </div>
-                    <span className="text-xs uppercase tracking-wider text-slate-400 font-mono">
-                      {item.title}
-                    </span>
-                    <h3 className="text-base font-semibold text-white mt-1">
-                      {item.subtitle}
-                    </h3>
-                  </div>
-                  <p className="text-xs text-slate-400 mt-3 pt-3 border-t border-white/5">
-                    {item.detail}
-                  </p>
-                </Card>
-              </motion.div>
-            );
-          })}
+      <div className="mt-8 grid grid-cols-1 gap-6 md:mt-12 md:grid-cols-[1fr_2fr]">
+        {/* Left Column Philosophy */}
+        <div className="text-xl text-zinc-900 dark:text-white">
+          <div className="font-semibold">My approach to the work is</div>
+          <div className="font-serif font-normal italic text-zinc-600 dark:text-zinc-400">
+            logic, consistency, and scalability
+          </div>
         </div>
 
-        {/* Bio & Practical Experience Deep Dive */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Narrative Bio */}
-          <div className="lg:col-span-6 bg-surface-100/50 border border-white/10 rounded-2xl p-6 sm:p-8 backdrop-blur-md">
-            <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-cyan-400" />
-              Developer Background
-            </h3>
+        {/* Right Column Narrative + Socials */}
+        <div className="flex flex-col gap-6 text-zinc-600 dark:text-zinc-300 leading-relaxed text-base">
+          <p>
+            I&apos;m <strong>Mohammed Meezan Afzal</strong>, a motivated BCA graduate (MIT Degree College, Mysore — CGPA: 7.9) and MERN Stack Developer with practical internship experience in full-stack web development at <strong>Ethnotech Academy</strong>.
+          </p>
+          <p>
+            I specialize in developing responsive user interfaces, secure backend services, database-driven applications (PostgreSQL, MongoDB, Prisma ORM), and integrating modern AI capabilities. I prioritize writing clean, maintainable code with robust error handling and intuitive user experiences.
+          </p>
 
-            <div className="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
-              <p>
-                I am a <strong>Bachelor of Computer Applications (BCA)</strong> graduate/student at{" "}
-                <strong>MIT Degree College, Mysore</strong> (CGPA: <strong>7.9</strong>), with practical
-                internship experience in full-stack web development at <strong>Ethnotech Academy</strong>.
-              </p>
-              <p>
-                My expertise centers on the modern JavaScript ecosystem—including <strong>React.js, Node.js, Express.js, PostgreSQL (Prisma ORM), MongoDB, Tailwind CSS, Docker</strong> and <strong>Git</strong>.
-              </p>
-              <p>
-                I specialize in developing responsive user interfaces, modular REST APIs, secure role-based access control (RBAC), and cloud-integrated applications (Cloudinary, Twilio SMS) that solve real-world problems.
-              </p>
-            </div>
-          </div>
+          {/* Social Links with Gradient Borders matching amanjag.dev */}
+          <div className="flex flex-wrap gap-3 pt-2">
+            {/* GitHub */}
+            <a
+              title="GitHub"
+              target="_blank"
+              rel="noopener noreferrer"
+              href={siteConfig.github}
+              className="group cursor-pointer rounded-lg bg-gradient-to-r from-brand-pink to-brand-purple p-0.5 hover:scale-[1.02] transition-transform"
+            >
+              <div className="flex items-center gap-2 rounded-md bg-background p-2.5 text-zinc-800 dark:text-white group-hover:bg-gradient-to-r group-hover:from-brand-pink group-hover:to-brand-purple group-hover:text-white transition-all">
+                <Github className="w-5 h-5" />
+                <span className="text-xs font-semibold">GitHub</span>
+              </div>
+            </a>
 
-          {/* Practical Capabilities Grid */}
-          <div className="lg:col-span-6 space-y-3">
-            <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-blue-500" />
-              Demonstrated Hands-on Areas
-            </h3>
+            {/* LinkedIn */}
+            <a
+              title="LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
+              href={siteConfig.linkedin}
+              className="group cursor-pointer rounded-lg bg-gradient-to-r from-brand-pink to-brand-purple p-0.5 hover:scale-[1.02] transition-transform"
+            >
+              <div className="flex items-center gap-2 rounded-md bg-background p-2.5 text-zinc-800 dark:text-white group-hover:bg-gradient-to-r group-hover:from-brand-pink group-hover:to-brand-purple group-hover:text-white transition-all">
+                <Linkedin className="w-5 h-5" />
+                <span className="text-xs font-semibold">LinkedIn</span>
+              </div>
+            </a>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {practicalAreas.map((area) => {
-                const Icon = area.icon;
-                return (
-                  <div
-                    key={area.title}
-                    className="p-4 rounded-xl bg-surface-200/60 border border-white/5 hover:border-cyan-500/20 transition-all"
-                  >
-                    <div className="flex items-center gap-2.5 mb-1.5">
-                      <Icon className="w-4 h-4 text-cyan-400" />
-                      <h4 className="text-sm font-semibold text-white">
-                        {area.title}
-                      </h4>
-                    </div>
-                    <p className="text-xs text-slate-400 leading-relaxed">
-                      {area.desc}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
+            {/* Email */}
+            <a
+              title="Email"
+              href={`mailto:${siteConfig.email}`}
+              className="group cursor-pointer rounded-lg bg-gradient-to-r from-brand-pink to-brand-purple p-0.5 hover:scale-[1.02] transition-transform"
+            >
+              <div className="flex items-center gap-2 rounded-md bg-background p-2.5 text-zinc-800 dark:text-white group-hover:bg-gradient-to-r group-hover:from-brand-pink group-hover:to-brand-purple group-hover:text-white transition-all">
+                <Mail className="w-5 h-5" />
+                <span className="text-xs font-semibold">Email</span>
+              </div>
+            </a>
+
+            {/* Resume */}
+            <a
+              title="Resume"
+              href="/resume"
+              className="group cursor-pointer rounded-lg bg-gradient-to-r from-brand-pink to-brand-purple p-0.5 hover:scale-[1.02] transition-transform"
+            >
+              <div className="flex items-center gap-2 rounded-md bg-background p-2.5 text-zinc-800 dark:text-white group-hover:bg-gradient-to-r group-hover:from-brand-pink group-hover:to-brand-purple group-hover:text-white transition-all">
+                <FileText className="w-5 h-5" />
+                <span className="text-xs font-semibold">Resume</span>
+              </div>
+            </a>
           </div>
         </div>
       </div>

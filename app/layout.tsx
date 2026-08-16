@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, Playfair_Display, JetBrains_Mono } from "next/font/google";
 import { Toaster } from "sonner";
+import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { siteConfig } from "@/data/siteConfig";
 import "./globals.css";
 
@@ -10,6 +11,13 @@ const sansFont = Inter({
   display: "swap",
 });
 
+const serifFont = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-serif",
+  display: "swap",
+  style: ["normal", "italic"],
+});
+
 const monoFont = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
@@ -17,7 +25,10 @@ const monoFont = JetBrains_Mono({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#08090D",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#fafafa" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
+  ],
   width: "device-width",
   initialScale: 1,
 };
@@ -25,24 +36,19 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
   title: {
-    default: `${siteConfig.name} | ${siteConfig.role}`,
+    default: `${siteConfig.name} - MERN Stack Developer | Portfolio`,
     template: `%s | ${siteConfig.name}`,
   },
-  description: `Portfolio of ${siteConfig.name}, a BCA student and ${siteConfig.role} building modern full-stack web applications and AI-powered solutions.`,
+  description: `Portfolio of ${siteConfig.name}, a BCA student and MERN Stack Developer building modern full-stack web applications and AI solutions.`,
   keywords: [
     "Mohammed Meezan Afzal",
     "MERN Stack Developer",
     "Full-Stack Developer",
     "React Developer",
-    "Next.js Developer",
     "Node.js Developer",
     "TypeScript",
-    "MongoDB",
-    "PostgreSQL",
-    "BCA Graduate 2026",
-    "Software Engineer Portfolio",
-    "Mysuru",
-    "India",
+    "BCA 2026",
+    "Mysore Developer",
   ],
   authors: [{ name: siteConfig.name, url: siteConfig.siteUrl }],
   creator: siteConfig.name,
@@ -50,25 +56,18 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: siteConfig.siteUrl,
-    title: `${siteConfig.name} | ${siteConfig.role}`,
+    title: `${siteConfig.name} - MERN Stack Developer | Portfolio`,
     description: siteConfig.tagline,
     siteName: siteConfig.name,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} | ${siteConfig.role}`,
+    title: `${siteConfig.name} - MERN Stack Developer | Portfolio`,
     description: siteConfig.tagline,
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
 };
 
@@ -77,60 +76,27 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: siteConfig.name,
-    jobTitle: siteConfig.role,
-    url: siteConfig.siteUrl,
-    sameAs: [siteConfig.github, siteConfig.linkedin],
-    alumniOf: {
-      "@type": "EducationalOrganization",
-      name: siteConfig.education.college,
-    },
-    knowsAbout: [
-      "JavaScript",
-      "TypeScript",
-      "React",
-      "Next.js",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "PostgreSQL",
-      "Prisma",
-      "AI API Integrations",
-    ],
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Mysuru",
-      addressRegion: "Karnataka",
-      addressCountry: "India",
-    },
-  };
-
   return (
     <html
       lang="en"
-      className={`${sansFont.variable} ${monoFont.variable} scroll-smooth dark`}
+      suppressHydrationWarning
+      className={`${sansFont.variable} ${serifFont.variable} ${monoFont.variable}`}
     >
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
-      <body className="min-h-screen bg-background text-foreground antialiased selection:bg-cyan-500/30 selection:text-white">
-        {children}
-        <Toaster
-          position="bottom-right"
-          toastOptions={{
-            style: {
-              background: "#0E111A",
-              color: "#F8FAFC",
-              border: "1px solid rgba(255, 255, 255, 0.1)",
-            },
-          }}
-        />
+      <body className="min-h-screen bg-background text-foreground antialiased selection:bg-brand-purple/30 selection:text-white">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+          <Toaster
+            position="bottom-right"
+            toastOptions={{
+              className: "dark:bg-zinc-900 dark:text-zinc-100 bg-white text-zinc-900 border border-zinc-200 dark:border-zinc-800",
+            }}
+          />
+        </ThemeProvider>
       </body>
     </html>
   );
