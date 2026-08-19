@@ -12,7 +12,7 @@ interface StackItem {
 }
 
 export const Skills: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState<CategoryType | null>("Frontend");
+  const [activeCategory, setActiveCategory] = useState<CategoryType | null>(null);
   const [hoveredCategory, setHoveredCategory] = useState<CategoryType | null>(null);
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
 
@@ -351,11 +351,10 @@ export const Skills: React.FC = () => {
                 onMouseEnter={() => setHoveredCategory(cat)}
                 onMouseLeave={() => setHoveredCategory(null)}
                 onClick={() => setActiveCategory(cat)}
-                className={`cursor-pointer select-none rounded-lg px-4 py-1.5 text-sm font-semibold transition-all duration-200 ${
-                  isCatActive
+                className={`cursor-pointer select-none rounded-lg px-4 py-1.5 text-sm font-semibold transition-all duration-200 ${isCatActive
                     ? "bg-gradient-to-r from-brand-pink to-brand-purple text-white shadow-md shadow-brand-pink/20 scale-[1.02]"
                     : "bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700"
-                }`}
+                  }`}
               >
                 {cat}
               </button>
@@ -389,11 +388,10 @@ export const Skills: React.FC = () => {
                   setHoveredSkill(null);
                   setHoveredCategory(null);
                 }}
-                className={`flex max-w-fit items-center gap-2.5 cursor-pointer select-none transition-all duration-200 pb-1 ${
-                  isHighlighted
+                className={`flex max-w-fit items-center gap-2.5 cursor-pointer select-none transition-all duration-200 pb-1 ${isHighlighted
                     ? "text-zinc-950 dark:text-white font-bold opacity-100 border-b-2 border-zinc-950 dark:border-white scale-[1.03]"
                     : "text-zinc-400 dark:text-zinc-600 opacity-40 border-b-2 border-transparent hover:opacity-90"
-                }`}
+                  }`}
               >
                 {item.icon}
                 <span className="text-sm tracking-tight">{item.name}</span>

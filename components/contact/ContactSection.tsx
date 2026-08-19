@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { toast } from "sonner";
 import { siteConfig } from "@/data/siteConfig";
-import { Mail, Linkedin, Github, MapPin, Send, CheckCircle2, AlertCircle } from "lucide-react";
+import { Mail, Linkedin, Github, MapPin, Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { motion } from "framer-motion";
 
 const contactSchema = z.object({
@@ -248,10 +248,20 @@ export const ContactSection: React.FC = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3 rounded-lg bg-gradient-to-r from-brand-pink to-brand-purple hover:opacity-95 text-white text-sm font-semibold flex items-center justify-center gap-2 shadow-lg hover:scale-[1.01] transition-transform disabled:opacity-50 cursor-pointer"
+                    onClick={handleSubmit(onSubmit)}
+                    className="w-full py-3 rounded-lg bg-gradient-to-r from-brand-pink to-brand-purple hover:opacity-95 text-white text-sm font-semibold flex items-center justify-center gap-2 shadow-lg hover:scale-[1.01] transition-transform disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                   >
-                    <Send className="w-4 h-4" />
-                    <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <span>Sending message...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4" />
+                        <span>Send Message</span>
+                      </>
+                    )}
                   </button>
                 </form>
               )}
