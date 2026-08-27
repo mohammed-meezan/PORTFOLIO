@@ -2,7 +2,7 @@
 
 import React, { useEffect } from "react";
 import Image from "next/image";
-import { X, ExternalLink, Download } from "lucide-react";
+import { X, ExternalLink } from "lucide-react";
 import { Certification } from "@/types";
 import { Button } from "../ui/Button";
 

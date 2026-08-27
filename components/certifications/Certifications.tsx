@@ -5,14 +5,17 @@ import Image from "next/image";
 import { certifications } from "@/data/certifications";
 import { Certification } from "@/types";
 import { CertModal } from "./CertModal";
-import { Award, Eye, ExternalLink, ArrowRight } from "lucide-react";
+import { Eye, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 
 export const Certifications: React.FC = () => {
   const [selectedCert, setSelectedCert] = useState<Certification | null>(null);
 
   return (
-    <section id="certificates" className="mx-auto mt-24 max-w-5xl px-6 md:mt-32 lg:px-0">
+    <section
+      id="certificates"
+      className="mx-auto mt-24 max-w-5xl px-6 md:mt-32 lg:px-0"
+    >
       {/* Title */}
       <div>
         <span className="text-xs font-mono uppercase tracking-widest text-brand-purple">
@@ -33,7 +36,10 @@ export const Certifications: React.FC = () => {
         </div>
 
         <div className="text-zinc-600 dark:text-zinc-300 leading-relaxed text-base">
-          Formal credentials earned through competitive coursework and real-world internship programs, validating competencies across Full-Stack Web Development, Frontend Engineering, and Git Version Control.
+          Formal credentials earned through competitive coursework and
+          real-world internship programs, validating competencies across
+          Full-Stack Web Development, Frontend Engineering, and Git Version
+          Control.
         </div>
       </div>
 

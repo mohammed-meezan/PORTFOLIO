@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { siteConfig } from "@/data/siteConfig";
 import { ThemeToggle } from "../theme/ThemeToggle";
 import { Menu, X, MessageSquare } from "lucide-react";
 
@@ -38,14 +37,9 @@ export const Navbar: React.FC = () => {
         {/* Brand Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2.5 text-zinc-900 dark:text-white font-bold text-lg tracking-tight hover:opacity-90 transition-opacity"
+          className="tracking-tight text-xl font-mono font-medium hover:text-zinc-950 dark:hover:text-white transition-colors text-zinc-500"
         >
-          <span className="w-8 h-8 rounded-lg bg-gradient-to-r from-brand-pink to-brand-purple p-0.5 inline-block">
-            <span className="w-full h-full rounded-[6px] bg-background flex items-center justify-center text-xs font-bold text-zinc-900 dark:text-white">
-              {siteConfig.initials}
-            </span>
-          </span>
-          <span className="font-semibold">{siteConfig.name}</span>
+          ~/meezan
         </Link>
 
         {/* Desktop Nav Items + Actions */}
@@ -82,7 +76,11 @@ export const Navbar: React.FC = () => {
             className="p-2 rounded-lg text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 md:hidden"
             aria-label="Toggle mobile navigation menu"
           >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {mobileMenuOpen ? (
+              <X className="w-5 h-5" />
+            ) : (
+              <Menu className="w-5 h-5" />
+            )}
           </button>
         </div>
       </div>

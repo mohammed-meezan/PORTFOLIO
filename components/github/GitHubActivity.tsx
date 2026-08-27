@@ -7,16 +7,7 @@ import { SectionHeading } from "../ui/SectionHeading";
 import { Card } from "../ui/Card";
 import { Badge } from "../ui/Badge";
 import { Button } from "../ui/Button";
-import {
-  Github,
-  GitBranch,
-  ExternalLink,
-  Code2,
-  FolderGit2,
-  Terminal,
-  Layers,
-  Sparkles,
-} from "lucide-react";
+import { Github, ExternalLink, FolderGit2 } from "lucide-react";
 import { motion } from "framer-motion";
 
 export const GitHubActivity: React.FC = () => {

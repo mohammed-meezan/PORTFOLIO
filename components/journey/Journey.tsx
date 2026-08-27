@@ -2,12 +2,15 @@
 
 import React from "react";
 import { journeyTimeline } from "@/data/experience";
-import { Briefcase, GraduationCap, Calendar, MapPin } from "lucide-react";
+import { Calendar, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 
 export const Journey: React.FC = () => {
   return (
-    <section id="experience" className="mx-auto mt-24 max-w-5xl px-6 md:mt-32 lg:px-0">
+    <section
+      id="experience"
+      className="mx-auto mt-24 max-w-5xl px-6 md:mt-32 lg:px-0"
+    >
       {/* Title */}
       <div>
         <span className="text-xs font-mono uppercase tracking-widest text-brand-purple">
@@ -28,7 +31,9 @@ export const Journey: React.FC = () => {
         </div>
 
         <div className="text-zinc-600 dark:text-zinc-300 leading-relaxed text-base">
-          A milestone-driven track record of formal computer application studies, team-based internship development at Ethnotech Academy, and persistent full-stack engineering work.
+          A milestone-driven track record of formal computer application
+          studies, team-based internship development at Ethnotech Academy, and
+          persistent full-stack engineering work.
         </div>
       </div>
 

@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
-import Link from "next/link";
-import { X, Download, FileText, ArrowRight } from "lucide-react";
+import { X, Download } from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
 import { Button } from "../ui/Button";
 

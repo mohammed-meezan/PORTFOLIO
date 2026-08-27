@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { Project } from "@/types";
-import { ExternalLink, Github, ArrowRight, Sparkles, Check } from "lucide-react";
+import { ExternalLink, Github, ArrowRight, Check, Pickaxe } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface ProjectCardProps {
@@ -30,8 +30,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
 
             {project.featured && (
               <span className="inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-brand-pink/10 text-brand-pink border border-brand-pink/20">
-                <Sparkles className="w-3 h-3" />
-                Featured Project
+                <Pickaxe className="w-3.5 h-3.5" />
+                In Progress
               </span>
             )}
           </div>
