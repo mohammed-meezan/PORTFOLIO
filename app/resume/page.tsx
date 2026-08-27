@@ -1,12 +1,13 @@
 import React from "react";
 import Link from "next/link";
 import { Metadata } from "next";
-import { ArrowLeft, Download, Printer, ExternalLink } from "lucide-react";
+import { ArrowLeft, Download, ExternalLink } from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
 
 export const metadata: Metadata = {
   title: "Resume — Mohammed Meezan Afzal | MERN Stack Developer",
-  description: "Official resume of Mohammed Meezan Afzal, MERN Stack Developer with internship experience at Ethnotech Academy and BCA from MIT Degree College.",
+  description:
+    "Official resume of Mohammed Meezan Afzal, MERN Stack Developer with internship experience at Ethnotech Academy and BCA from MIT Degree College.",
 };
 
 export default function ResumePage() {
@@ -80,7 +81,13 @@ export default function ResumePage() {
             Professional Summary
           </h2>
           <p className="text-slate-800 leading-relaxed text-justify text-[13px]">
-            Motivated BCA graduate and MERN Stack Developer with internship experience in full-stack web development. Skilled in React.js, JavaScript, Node.js, Express.js, MongoDB, PostgreSQL, Prisma ORM, REST APIs, Tailwind CSS, Docker and Git. Experienced in developing responsive user interfaces, secure backend services, database-driven applications and API integrations. Passionate about building scalable, maintainable and user-focused web applications.
+            Motivated BCA graduate and MERN Stack Developer with internship
+            experience in full-stack web development. Skilled in React.js,
+            JavaScript, Node.js, Express.js, MongoDB, PostgreSQL, Prisma ORM,
+            REST APIs, Tailwind CSS, Docker and Git. Experienced in developing
+            responsive user interfaces, secure backend services, database-driven
+            applications and API integrations. Passionate about building
+            scalable, maintainable and user-focused web applications.
           </p>
         </section>
 
@@ -119,7 +126,8 @@ export default function ResumePage() {
                 Tools &amp; Platforms:
               </span>
               <span className="sm:col-span-8">
-                Git, GitHub, Docker, Clerk Authentication, Cloudinary, Twilio API
+                Git, GitHub, Docker, Clerk Authentication, Cloudinary, Twilio
+                API
               </span>
             </div>
           </div>
@@ -143,28 +151,35 @@ export default function ResumePage() {
 
             <ul className="list-disc list-outside ml-5 mt-1.5 space-y-1 text-slate-800 text-[12.5px] leading-relaxed">
               <li>
-                Developed and maintained REST APIs and responsive user interfaces as part of full-stack web development tasks.
+                Developed and maintained REST APIs and responsive user
+                interfaces as part of full-stack web development tasks.
               </li>
               <li>
-                Collaborated using Git version control workflows in a team-based software development environment.
+                Collaborated using Git version control workflows in a team-based
+                software development environment.
               </li>
               <li>
-                Worked on full-stack web development using modern frontend and backend technologies.
+                Worked on full-stack web development using modern frontend and
+                backend technologies.
               </li>
               <li>
-                Developed responsive user interfaces using React.js, JavaScript, HTML5, CSS3 and Tailwind CSS.
+                Developed responsive user interfaces using React.js, JavaScript,
+                HTML5, CSS3 and Tailwind CSS.
               </li>
               <li>
                 Built and integrated REST APIs using Node.js and Express.js.
               </li>
               <li>
-                Worked with databases and backend services for data-driven web applications.
+                Worked with databases and backend services for data-driven web
+                applications.
               </li>
               <li>
-                Used Git and GitHub for version control, source code management and collaborative development workflows.
+                Used Git and GitHub for version control, source code management
+                and collaborative development workflows.
               </li>
               <li>
-                Gained practical experience in software development, debugging, API integration and responsive application development.
+                Gained practical experience in software development, debugging,
+                API integration and responsive application development.
               </li>
             </ul>
           </div>
@@ -183,31 +198,40 @@ export default function ResumePage() {
 
             <ul className="list-disc list-outside ml-5 space-y-1 text-slate-800 text-[12.5px] leading-relaxed">
               <li>
-                Developed a full-stack healthcare record management platform using React.js, Node.js, Express.js, PostgreSQL and Prisma ORM.
+                Developed a full-stack healthcare record management platform
+                using React.js, Node.js, Express.js, PostgreSQL and Prisma ORM.
               </li>
               <li>
-                Implemented role-based authentication and authorization using Clerk for Patients, Doctors and Administrators.
+                Implemented role-based authentication and authorization using
+                Clerk for Patients, Doctors and Administrators.
               </li>
               <li>
-                Built centralized medical record management functionality for secure digital storage and retrieval of healthcare information.
+                Built centralized medical record management functionality for
+                secure digital storage and retrieval of healthcare information.
               </li>
               <li>
-                Integrated Cloudinary for secure medical document and media storage.
+                Integrated Cloudinary for secure medical document and media
+                storage.
               </li>
               <li>
-                Implemented QR-based temporary profile access to provide controlled access to patient information.
+                Implemented QR-based temporary profile access to provide
+                controlled access to patient information.
               </li>
               <li>
-                Integrated Twilio SMS API to automate medicine reminders and improve patient engagement.
+                Integrated Twilio SMS API to automate medicine reminders and
+                improve patient engagement.
               </li>
               <li>
-                Designed responsive dashboards using Tailwind CSS for different user roles and workflows.
+                Designed responsive dashboards using Tailwind CSS for different
+                user roles and workflows.
               </li>
               <li>
-                Developed modular REST APIs and optimized database queries using Prisma ORM.
+                Developed modular REST APIs and optimized database queries using
+                Prisma ORM.
               </li>
               <li>
-                Containerized the application using Docker to simplify development, testing and deployment.
+                Containerized the application using Docker to simplify
+                development, testing and deployment.
               </li>
             </ul>
 
@@ -216,10 +240,22 @@ export default function ResumePage() {
                 Impact
               </span>
               <ul className="list-disc list-outside ml-5 space-y-0.5 text-slate-800 text-[12px] leading-relaxed">
-                <li>Improved medical record accessibility through centralized digital storage.</li>
-                <li>Enhanced healthcare data security through authentication, authorization, and temporary QR-based access.</li>
-                <li>Increased patient engagement using automated medicine reminder notifications.</li>
-                <li>Built a scalable backend architecture with modular services and optimized database queries.</li>
+                <li>
+                  Improved medical record accessibility through centralized
+                  digital storage.
+                </li>
+                <li>
+                  Enhanced healthcare data security through authentication,
+                  authorization, and temporary QR-based access.
+                </li>
+                <li>
+                  Increased patient engagement using automated medicine reminder
+                  notifications.
+                </li>
+                <li>
+                  Built a scalable backend architecture with modular services
+                  and optimized database queries.
+                </li>
               </ul>
             </div>
           </div>
@@ -241,9 +277,7 @@ export default function ResumePage() {
                   MIT Degree College, Mysore
                 </span>
               </div>
-              <p className="text-xs text-slate-700 font-sans">
-                CGPA: 7.9
-              </p>
+              <p className="text-xs text-slate-700 font-sans">CGPA: 7.9</p>
             </div>
 
             <div>

@@ -5,13 +5,16 @@ import { siteConfig } from "@/data/siteConfig";
 
 export const About: React.FC = () => {
   return (
-    <section id="about" className="mx-auto mt-24 max-w-5xl px-6 md:mt-32 lg:px-0">
+    <section
+      id="about"
+      className="mx-auto mt-24 max-w-5xl px-6 md:mt-32 lg:px-0"
+    >
       <div>
         <span className="text-xs font-mono uppercase tracking-widest text-brand-purple">
           About Me
         </span>
         <h3 className="mt-2 text-3xl font-semibold tracking-tight text-zinc-900 dark:text-white md:text-4xl">
-          {siteConfig.name}
+          A little about me
         </h3>
       </div>
 
@@ -27,7 +30,18 @@ export const About: React.FC = () => {
         {/* Right Column Narrative + Social Icons */}
         <div className="flex flex-col gap-8 text-zinc-600 dark:text-zinc-300 leading-relaxed text-base">
           <p>
-            I&apos;m <strong>Mohammed Meezan Afzal</strong>, a developer and designer with practical internship experience in web and mobile application development. I&apos;m passionate about a wide range of topics including development, design, cloud architectures, and modern web engineering. Currently, I&apos;m looking for a position in <strong>Full-Stack Development &amp; Software Engineering</strong> where I can continue creating user-friendly and appealing solutions. Research is important to me, as I believe in understanding the audience&apos;s needs before starting any project. In my free time, I enjoy writing technical documentation and exploring new technologies to assist others in their technical pursuits.
+            I&apos;m <strong>Mohammed Meezan Afzal</strong>, a developer and
+            designer with practical internship experience in web and mobile
+            application development. I&apos;m passionate about a wide range of
+            topics including development, design, cloud architectures, and
+            modern web engineering. Currently, I&apos;m looking for a position
+            in{" "}
+            <strong>Full-Stack Development &amp; Software Engineering</strong>{" "}
+            where I can continue creating user-friendly and appealing solutions.
+            Research is important to me, as I believe in understanding the
+            audience&apos;s needs before starting any project. In my free time,
+            I enjoy writing technical documentation and exploring new
+            technologies to assist others in their technical pursuits.
           </p>
 
           {/* Social Icons row matching portfolio.amanjag.dev without Instagram */}

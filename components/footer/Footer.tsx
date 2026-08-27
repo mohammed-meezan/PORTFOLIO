@@ -17,14 +17,9 @@ export const Footer: React.FC = () => {
         <div className="flex flex-col items-center md:items-start gap-1">
           <Link
             href="/"
-            className="text-base font-bold text-zinc-900 dark:text-white flex items-center gap-2"
+            className="tracking-tight text-md font-mono font-medium hover:text-zinc-950 dark:hover:text-white transition-colors text-zinc-500"
           >
-            <span className="w-6 h-6 rounded bg-gradient-to-r from-brand-pink to-brand-purple p-0.5 inline-block">
-              <span className="w-full h-full rounded-[4px] bg-background flex items-center justify-center text-[10px] font-bold text-zinc-900 dark:text-white">
-                {siteConfig.initials}
-              </span>
-            </span>
-            <span>{siteConfig.name}</span>
+            ~/meezan
           </Link>
           <p className="text-xs text-zinc-500">
             MERN Stack Developer • BCA Graduate 2026
@@ -73,7 +68,8 @@ export const Footer: React.FC = () => {
       </div>
 
       <div className="mt-8 text-center text-xs text-zinc-500">
-        © {new Date().getFullYear()} {siteConfig.name}. Designed &amp; built with Next.js, TypeScript &amp; Tailwind CSS.
+        © {new Date().getFullYear()} {siteConfig.name}. Designed &amp; built
+        with Next.js, TypeScript &amp; Tailwind CSS.
       </div>
     </footer>
   );

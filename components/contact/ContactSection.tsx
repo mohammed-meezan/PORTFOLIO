@@ -6,8 +6,16 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { toast } from "sonner";
 import { siteConfig } from "@/data/siteConfig";
-import { Mail, Linkedin, Github, MapPin, Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
-import { motion } from "framer-motion";
+import {
+  Mail,
+  Linkedin,
+  Github,
+  MapPin,
+  Send,
+  CheckCircle2,
+  AlertCircle,
+  Loader2,
+} from "lucide-react";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
@@ -56,7 +64,10 @@ export const ContactSection: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="mx-auto mt-24 max-w-5xl px-6 md:mt-32 pb-24 lg:px-0">
+    <section
+      id="contact"
+      className="mx-auto mt-24 max-w-5xl px-6 md:mt-32 pb-24 lg:px-0"
+    >
       {/* Title */}
       <div>
         <span className="text-xs font-mono uppercase tracking-widest text-brand-purple">
@@ -77,7 +88,12 @@ export const ContactSection: React.FC = () => {
         </div>
 
         <div className="text-zinc-600 dark:text-zinc-300 leading-relaxed text-base">
-          I am actively exploring <strong>Junior / Entry-Level Full-Stack &amp; MERN Stack Developer</strong> roles. Whether you have a position open or would like to discuss web application engineering, feel free to send a message.
+          I am actively exploring{" "}
+          <strong>
+            Junior / Entry-Level Full-Stack &amp; MERN Stack Developer
+          </strong>{" "}
+          roles. Whether you have a position open or would like to discuss web
+          application engineering, feel free to send a message.
         </div>
       </div>
 
@@ -95,7 +111,9 @@ export const ContactSection: React.FC = () => {
               </div>
             </div>
             <div>
-              <span className="text-xs font-mono text-zinc-500 uppercase">Email</span>
+              <span className="text-xs font-mono text-zinc-500 uppercase">
+                Email
+              </span>
               <p className="text-sm font-semibold text-zinc-900 dark:text-white group-hover:text-brand-purple transition-colors">
                 {siteConfig.email}
               </p>
@@ -114,7 +132,9 @@ export const ContactSection: React.FC = () => {
               </div>
             </div>
             <div>
-              <span className="text-xs font-mono text-zinc-500 uppercase">LinkedIn</span>
+              <span className="text-xs font-mono text-zinc-500 uppercase">
+                LinkedIn
+              </span>
               <p className="text-sm font-semibold text-zinc-900 dark:text-white group-hover:text-brand-purple transition-colors">
                 mohammed-meezan-afzal
               </p>
@@ -133,7 +153,9 @@ export const ContactSection: React.FC = () => {
               </div>
             </div>
             <div>
-              <span className="text-xs font-mono text-zinc-500 uppercase">GitHub</span>
+              <span className="text-xs font-mono text-zinc-500 uppercase">
+                GitHub
+              </span>
               <p className="text-sm font-semibold text-zinc-900 dark:text-white group-hover:text-brand-purple transition-colors">
                 github.com/mohammed-meezan
               </p>
@@ -145,7 +167,9 @@ export const ContactSection: React.FC = () => {
               <MapPin className="w-4 h-4" />
             </div>
             <div>
-              <span className="text-xs font-mono text-zinc-500 uppercase">Location</span>
+              <span className="text-xs font-mono text-zinc-500 uppercase">
+                Location
+              </span>
               <p className="text-sm font-semibold text-zinc-800 dark:text-zinc-200">
                 {siteConfig.location}
               </p>
@@ -166,7 +190,8 @@ export const ContactSection: React.FC = () => {
                     Message Sent Successfully!
                   </h4>
                   <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 max-w-sm mx-auto">
-                    Thank you for reaching out. I will review your message and reply promptly.
+                    Thank you for reaching out. I will review your message and
+                    reply promptly.
                   </p>
                   <button
                     onClick={() => setIsSuccess(false)}
@@ -189,7 +214,8 @@ export const ContactSection: React.FC = () => {
                     />
                     {errors.name && (
                       <p className="text-xs text-red-500 mt-1 flex items-center gap-1">
-                        <AlertCircle className="w-3 h-3" /> {errors.name.message}
+                        <AlertCircle className="w-3 h-3" />{" "}
+                        {errors.name.message}
                       </p>
                     )}
                   </div>
@@ -206,7 +232,8 @@ export const ContactSection: React.FC = () => {
                     />
                     {errors.email && (
                       <p className="text-xs text-red-500 mt-1 flex items-center gap-1">
-                        <AlertCircle className="w-3 h-3" /> {errors.email.message}
+                        <AlertCircle className="w-3 h-3" />{" "}
+                        {errors.email.message}
                       </p>
                     )}
                   </div>
@@ -223,7 +250,8 @@ export const ContactSection: React.FC = () => {
                     />
                     {errors.subject && (
                       <p className="text-xs text-red-500 mt-1 flex items-center gap-1">
-                        <AlertCircle className="w-3 h-3" /> {errors.subject.message}
+                        <AlertCircle className="w-3 h-3" />{" "}
+                        {errors.subject.message}
                       </p>
                     )}
                   </div>
@@ -240,7 +268,8 @@ export const ContactSection: React.FC = () => {
                     />
                     {errors.message && (
                       <p className="text-xs text-red-500 mt-1 flex items-center gap-1">
-                        <AlertCircle className="w-3 h-3" /> {errors.message.message}
+                        <AlertCircle className="w-3 h-3" />{" "}
+                        {errors.message.message}
                       </p>
                     )}
                   </div>

@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Metadata } from "next";
 import { projects } from "@/data/projects";
-import { siteConfig } from "@/data/siteConfig";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
@@ -16,9 +15,6 @@ import {
   Lightbulb,
   BookOpen,
   Cpu,
-  Server,
-  Database,
-  Lock,
   CheckCircle2,
   Terminal,
 } from "lucide-react";
@@ -35,7 +31,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
 
@@ -153,7 +151,9 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {project.architecture.frontend && (
                 <div className="p-4 rounded-xl bg-surface-100/70 border border-white/5">
-                  <span className="text-xs text-slate-400 font-mono">Client-Side Tier</span>
+                  <span className="text-xs text-slate-400 font-mono">
+                    Client-Side Tier
+                  </span>
                   <p className="text-sm font-semibold text-white mt-1">
                     {project.architecture.frontend}
                   </p>
@@ -162,7 +162,9 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
 
               {project.architecture.backend && (
                 <div className="p-4 rounded-xl bg-surface-100/70 border border-white/5">
-                  <span className="text-xs text-slate-400 font-mono">Server &amp; API Tier</span>
+                  <span className="text-xs text-slate-400 font-mono">
+                    Server &amp; API Tier
+                  </span>
                   <p className="text-sm font-semibold text-white mt-1">
                     {project.architecture.backend}
                   </p>
@@ -171,7 +173,9 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
 
               {project.architecture.database && (
                 <div className="p-4 rounded-xl bg-surface-100/70 border border-white/5">
-                  <span className="text-xs text-slate-400 font-mono">Data Persistence Tier</span>
+                  <span className="text-xs text-slate-400 font-mono">
+                    Data Persistence Tier
+                  </span>
                   <p className="text-sm font-semibold text-white mt-1">
                     {project.architecture.database}
                   </p>
@@ -180,7 +184,9 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
 
               {project.architecture.auth && (
                 <div className="p-4 rounded-xl bg-surface-100/70 border border-white/5">
-                  <span className="text-xs text-slate-400 font-mono">Security &amp; Auth</span>
+                  <span className="text-xs text-slate-400 font-mono">
+                    Security &amp; Auth
+                  </span>
                   <p className="text-sm font-semibold text-white mt-1">
                     {project.architecture.auth}
                   </p>
@@ -261,11 +267,16 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
             {project.challenges.map((ch, idx) => (
               <Card key={idx} className="p-6 bg-surface-100/70 border-white/10">
                 <h4 className="text-sm font-bold text-white mb-2 flex items-center gap-2">
-                  <span className="text-amber-400 font-mono">Hurdle {idx + 1}:</span>
+                  <span className="text-amber-400 font-mono">
+                    Hurdle {idx + 1}:
+                  </span>
                   {ch.challenge}
                 </h4>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed pl-4 border-l-2 border-cyan-400">
-                  <strong className="text-cyan-400 font-mono">Resolution:</strong> {ch.solution}
+                  <strong className="text-cyan-400 font-mono">
+                    Resolution:
+                  </strong>{" "}
+                  {ch.solution}
                 </p>
               </Card>
             ))}
@@ -280,7 +291,10 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
           </h2>
           <div className="p-6 rounded-2xl bg-surface-100/60 border border-white/10 space-y-2.5">
             {project.learnings.map((learning, idx) => (
-              <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
+              <div
+                key={idx}
+                className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300"
+              >
                 <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-2 shrink-0" />
                 <span>{learning}</span>
               </div>
