@@ -73,7 +73,114 @@ export const projects: Project[] = [
       {
         title: "Emergency QR Profile",
         description: "Instant scannable medical summary highlighting blood type, allergies, and emergency contacts."
-      }
+      },
+
     ]
-  }
+  },
+  
+        {
+    id: "wisdom-primary-school",
+    slug: "wisdom-primary-school",
+    title: "Wisdom Nursery and Primary School",
+    tagline:
+      "Professional institutional website with responsive design, SEO optimization, and search engine integration.",
+    description:
+      "A production-ready institutional website built for Wisdom Nursery and Primary School to establish a professional online presence and make essential school information easily accessible.",
+    fullOverview:
+      "Wisdom Nursery and Primary School is a production institutional website developed for a real-world educational client. The platform presents the school's academics, facilities, gallery, and contact information through a clean and structured interface. It is fully responsive across mobile, tablet, and desktop devices, with a strong focus on SEO, performance, accessibility, and maintainability.",
+    problem:
+      "The school needed a professional online presence where parents and visitors could easily discover information about academics, facilities, school activities, and how to contact the institution.",
+    solution:
+      "Built a responsive and performance-focused institutional website using Next.js, TypeScript, and Tailwind CSS, with structured metadata, XML sitemap, robots.txt, and Google Search Console integration to improve search visibility and crawlability.",
+    featured: false,
+    category: "Educational Institution Website",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "SEO",
+      "Google Search Console",
+    ],
+    features: [
+      "Professional school website with structured institutional information",
+      "Academics and educational programs showcase",
+      "School facilities and infrastructure showcase",
+      "Responsive image gallery for school activities and campus visuals",
+      "Dedicated contact and school information sections",
+      "Fully responsive UI for mobile, tablet, and desktop devices",
+      "Reusable and maintainable UI components",
+      "SEO-optimized page metadata",
+      "XML sitemap generation for search-engine discovery",
+      "robots.txt configuration for crawler management",
+      "Google Search Console integration",
+      "Optimized images and assets for improved page performance",
+    ],
+    architecture: {
+      frontend:
+        "Next.js application built with TypeScript and reusable responsive components styled using Tailwind CSS.",
+      backend:
+        "Frontend-focused institutional website without a dedicated backend service.",
+      database:
+        "No database required; the website primarily presents structured institutional content.",
+      auth:
+        "No authentication system required for this public-facing institutional website.",
+      services: [
+        "Google Search Console for search indexing and website monitoring",
+        "Next.js SEO features for metadata, sitemap, and robots.txt configuration",
+      ],
+    },
+    challenges: [
+      {
+        challenge:
+          "Creating a professional institutional design that works consistently across mobile, tablet, and desktop screen sizes.",
+        solution:
+          "Developed reusable responsive components and carefully structured layouts using Tailwind CSS breakpoints and adaptive design patterns.",
+      },
+      {
+        challenge:
+          "Improving the school's discoverability through search engines.",
+        solution:
+          "Implemented structured page metadata, XML sitemap, robots.txt, and Google Search Console integration to support search indexing and crawlability.",
+      },
+      {
+        challenge:
+          "Maintaining good page performance while presenting multiple visual assets such as school facilities and gallery images.",
+        solution:
+          "Optimized image assets and page layouts to reduce unnecessary loading overhead while maintaining a visually engaging experience.",
+      },
+    ],
+    learnings: [
+      "Gained practical experience building a production website for a real-world client.",
+      "Improved understanding of responsive UI development using Next.js and Tailwind CSS.",
+      "Learned how technical SEO elements such as metadata, XML sitemaps, and robots.txt contribute to website discoverability.",
+      "Gained hands-on experience integrating and monitoring a website through Google Search Console.",
+      "Improved understanding of performance-focused asset and layout optimization.",
+    ],
+    demoUrl: "https://www.wisdomprimary.in/",
+    githubUrl: "",
+    image:
+      "https://res.cloudinary.com/ddr1ynq4c/image/upload/v1790516047/favicon_hzx2qs.png",
+    mockups: [
+      {
+        title: "School Homepage",
+        description:
+          "Professional landing page introducing the school and providing quick access to important institutional information.",
+      },
+      {
+        title: "Academics & Facilities",
+        description:
+          "Structured sections showcasing academic offerings, school facilities, and the institution's educational environment.",
+      },
+      {
+        title: "School Gallery",
+        description:
+          "Responsive gallery presenting campus visuals, activities, and important moments from school life.",
+      },
+      {
+        title: "Contact & Information",
+        description:
+          "Accessible contact and institutional information designed to help parents and visitors connect with the school.",
+      },
+    ],
+  },
 ];
